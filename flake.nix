@@ -16,13 +16,14 @@
   outputs = {
     self,
     nixpkgs,
+    home-manager,
     ...
   } @ inputs: {
     nixosConfigurations."tower" = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/tower/configuration.nix
-        inputs.home-manager.nixosModules.default
+        home-manager.nixosModules.default
       ];
     };
   };

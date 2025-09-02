@@ -67,8 +67,6 @@
     isNormalUser = true;
     description = "Hauke Schnau";
     extraGroups = ["networkmanager" "wheel" "docker"];
-    packages = with pkgs; [
-    ];
     shell = pkgs.fish;
   };
 
@@ -76,8 +74,11 @@
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
-    users = {
-      "schnau" = import ../../modules/home-manager.nix;
+    # users = {
+    #   "schnau" = import ../../modules/home-manager.nix;
+    # };
+    users.schnau = {
+      imports = [../../modules/home-manager.nix];
     };
   };
 
