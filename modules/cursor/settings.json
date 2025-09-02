@@ -40,5 +40,10 @@
     "workbench.editor.limit.value": 9,
     "workbench.editor.limit.perEditorGroup": false,
     "workbench.editor.limit.cozying": true,
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "window.titleBarStyle": "native",
+    "window.customTitleBarVisibility": "never",
+    "window.nativeFullScreen": false,
+    "window.nativeTabs": true,
 }
