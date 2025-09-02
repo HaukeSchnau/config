@@ -23,6 +23,7 @@
     shells = with pkgs; [ fish ];
 
     systemPath = [
+      "/opt/homebrew/bin"
       "/Users/haukeschnau/.bun/bin"
       "/Users/haukeschnau/go/bin"
     ];

@@ -45,12 +45,16 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
+  # TODO: Consolidate into projects where they are needed
   home.packages = with pkgs; [
     # CLI tools
     btop
     # bitwarden-cli
     hyperfine
     typst
+    yt-dlp
+    step-cli
+    xh
 
     # JavaScript
     bun
@@ -63,8 +67,25 @@
     go
     jujutsu
     uv
-
+    fastlane
+    cocoapods
+    direnv
+    flutter
     code-cursor
+    ghostty-bin
+    jetbrains-toolbox
+    # darwin.xcode
+
+    # Applications
+    obsidian
+    raycast
+    slack
+    notion-app
+    spotify
+    stats
+    netbird
+    karabiner-elements
+    aldente
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

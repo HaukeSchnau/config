@@ -3,7 +3,7 @@
     enable = true;
 
     onActivation = {
-      autoUpdate = false;
+      autoUpdate = true;
       upgrade = true;
       cleanup = "zap";
     };
@@ -12,31 +12,16 @@
     global.brewfile = true;
 
     casks = [
-      # "arc"
-      # "1password"
-      # "cursor"
-      # "slack"
-      # "visual-studio-code"
-      # "raycast"
-      # "rectangle"
-      # "stats"
-      # "bartender"
-      # "microsoft-outlook"
-      # "obs"
-      # "docker"
-      # "karabiner-elements"
-      # "scroll-reverser"
-      # "neovide"
-      # "ghostty"
-      # "alt-tab"
-      # "notion"
-      # "yaak"
-      # "cleanshot"
-      # "shottr"
+      "font-new-computer-modern"
+      "linear-linear"
+      "mactex-no-gui"
+      "orbstack"
+      "zen"
     ];
 
     # CHECK NIX FIRST!
     brews = [
+      "taproom"
     ];
 
     masApps = {
