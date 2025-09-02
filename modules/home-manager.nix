@@ -3,6 +3,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ./git.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "schnau";
@@ -16,17 +20,6 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
-
-  programs.git = {
-    enable = true;
-    userName = "Hauke Schnau";
-    userEmail = "hauke@schnau.dev";
-    extraConfig = {
-      init = {
-        defaultBranch = "main";
-      };
-    };
-  };
 
   programs = {
     bat.enable = true;
@@ -49,7 +42,6 @@
     fselect
     dua
     dust
-    delta
     just
     poppler
     resvg
