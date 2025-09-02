@@ -43,10 +43,7 @@
     # Development tools
     alejandra
     dive
-    git
     lazydocker
-    glab
-    gh
     go
     jujutsu
     uv

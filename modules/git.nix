@@ -84,5 +84,8 @@
     delta
     mergiraf
     lazygit
+    git
+    glab
+    gh
   ];
 }
