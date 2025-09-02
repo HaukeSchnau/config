@@ -1,7 +1,16 @@
 {pkgs, ...}: {
   programs = {
+    fish = {
+      enable = true;
+      functions = {
+        # nix = {
+        #   command = "nix --extra-experimental-features nix-command --extra-experimental-features flakes shell fish";
+        # };
+        gitignore = "curl -sL https://www.gitignore.io/api/$argv";
+      };
+    };
+
     bat.enable = true;
-    fish.enable = true;
     starship.enable = true;
     yazi.enable = true;
     zoxide.enable = true;
