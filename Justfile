@@ -1,7 +1,7 @@
 switch host:
     #!/usr/bin/env bash
     set -e
-    alejandra . &>/dev/null
+    alejandra .
     git diff -U0
     echo "NixOS Rebuilding..."
     sudo nixos-rebuild switch --flake .#{{host}} &>nixos-switch.log || (

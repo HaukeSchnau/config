@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./git.nix
+    ./shell.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -22,34 +23,13 @@
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
   programs = {
-    bat.enable = true;
     firefox.enable = true;
     neovim.enable = true;
-    fzf.enable = true;
-    fish.enable = true;
-    starship.enable = true;
-    yazi.enable = true;
-    zoxide.enable = true;
   };
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # Core shell setup
-    carapace
-    eza
-    fd
-    fselect
-    dua
-    dust
-    just
-    poppler
-    resvg
-    ripgrep
-    ripgrep-all
-    p7zip
-    zellij
-
     # CLI tools
     btop
     bitwarden-cli
