@@ -13,26 +13,60 @@
       };
     };
 
+    starship = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
+    carapace = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
+    fzf = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
+    yazi = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
+    zoxide = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+    
+    zellij = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
+    eza = {
+      enable = true;
+      enableFishIntegration = true;
+      git = true;
+    };
+
+    direnv = {
+      enable = true;
+      # enableFishIntegration = true; 
+    };
+
+    ripgrep.enable = true;
+    ripgrep-all.enable = true;
+    fd.enable = true;
     bat.enable = true;
-    starship.enable = true;
-    yazi.enable = true;
-    zoxide.enable = true;
-    fzf.enable = true;
   };
 
   home.packages = with pkgs; [
-    carapace
-    eza
-    fd
     fselect
     dua
     dust
     just
     poppler
     resvg
-    ripgrep
-    ripgrep-all
     p7zip
-    zellij
   ];
 }

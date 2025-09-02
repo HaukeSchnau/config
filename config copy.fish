@@ -1,25 +1,3 @@
-eval (/opt/homebrew/bin/brew shellenv)
-
-# Modern replacements for cli tools
-alias vim=nvim
-alias v=nvim
-alias ls="eza --icons"
-alias cat=bat
-alias htop=zenith
-alias pip="uv pip"
-alias ranger=yazi
-alias y=yazi
-alias find=fd
-alias grep="rg -i"
-alias du=dust
-alias tmux=zellij
-zoxide init fish | source
-alias cd=z
-alias ff=fzf
-alias devdash="zellij -l ~/.config/zellij/layouts/dev-dashboard.kdl"
-alias lg=lazygit
-alias ld=lazydocker
-
 export EDITOR=nvim
 
 alias c="open $1 -a \"Cursor\""

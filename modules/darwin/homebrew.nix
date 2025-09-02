@@ -13,6 +13,7 @@
 
     casks = [
       "font-new-computer-modern"
+      "karabiner-elements"
       "linear-linear"
       "mactex-no-gui"
       "orbstack"

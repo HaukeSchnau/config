@@ -18,11 +18,6 @@
   # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
-  programs = {
-    firefox.enable = true;
-    neovim.enable = true;
-  };
-
   home.shellAliases = {
     vim = "nvim";
     v = "nvim";
@@ -36,11 +31,54 @@
     grep = "rg -i";
     du = "dust";
     tmux = "zellij";
-    # cd = "z";
+    cd = "z";
     ff = "fzf";
     devdash = "zellij -l ~/.config/zellij/layouts/dev-dashboard.kdl";
     lg = "lazygit";
     ld = "lazydocker";
+  };
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    SSH_AUTH_SOCK = "/Users/haukeschnau/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock";
+    ANDROID_HOME = "/Users/haukeschnau/Library/Android/sdk";
+    XDG_CONFIG_HOME = "/Users/haukeschnau/.config";
+  };
+
+  programs = {
+    firefox.enable = true;
+    neovim.enable = true;
+    bun.enable = true;
+    btop.enable = true;
+    yt-dlp.enable = true;
+    lazydocker.enable = true;
+    lazysql.enable = true;
+    go.enable = true;
+    jujutsu.enable = true;
+    uv.enable = true;
+    
+    ghostty = {
+      enable = true;
+      package = pkgs.ghostty-bin;
+      settings = {
+        macos-titlebar-style = "tabs";
+        background-opacity = 0.95;
+        theme = "catppuccin-macchiato";
+        window-padding-x = 12;
+        selection-invert-fg-bg = "true";
+        macos-option-as-alt = "left";
+        mouse-hide-while-typing = "true"; 
+        background-blur = 10;
+        quick-terminal-position = "center";
+        keybind = [
+          "global:ctrl+shift+grave_accent=toggle_quick_terminal"
+          "shift+enter=text:\x1b\r"
+        ];
+      };
+    };
+
+    obsidian.enable = true;
+    spotify-player.enable = true;
   };
 
   # The home.packages option allows you to install Nix packages into your
@@ -48,43 +86,31 @@
   # TODO: Consolidate into projects where they are needed
   home.packages = with pkgs; [
     # CLI tools
-    btop
     # bitwarden-cli
     hyperfine
     typst
-    yt-dlp
     step-cli
     xh
 
-    # JavaScript
-    bun
     nodejs_24
 
     # Development tools
     alejandra
     dive
-    lazydocker
-    go
-    jujutsu
-    uv
     fastlane
     cocoapods
-    direnv
     flutter
     code-cursor
-    ghostty-bin
     jetbrains-toolbox
     # darwin.xcode
 
     # Applications
-    obsidian
     raycast
     slack
     notion-app
     spotify
     stats
     netbird
-    karabiner-elements
     aldente
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
@@ -101,25 +127,11 @@
     # '')
   ];
 
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. These will be explicitly sourced when using a
-  # shell provided by Home Manager. If you don't want to manage your shell
-  # through Home Manager then you have to manually source 'hm-session-vars.sh'
-  # located at either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/schnau/etc/profile.d/hm-session-vars.sh
-  #
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
+  # home.file."/Users/haukeschnau/Library/Application Support/Cursor/User/settings.json".source = config.lib.file.mkOutOfStoreSymlink "./cursor/settings.json";
+  # home.file."/Users/haukeschnau/Library/Application Support/Cursor/User/keybindings.json".source = config.lib.file.mkOutOfStoreSymlink "./cursor/keybindings.json";
+
+  home.file."/Users/haukeschnau/Library/Application Support/Cursor/User/settings.json".source = config.lib.file.mkOutOfStoreSymlink /Users/haukeschnau/config/modules/cursor/settings.json;
+  home.file."/Users/haukeschnau/Library/Application Support/Cursor/User/keybindings.json".source = config.lib.file.mkOutOfStoreSymlink /Users/haukeschnau/config/modules/cursor/keybindings.json;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

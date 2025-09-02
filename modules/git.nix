@@ -76,16 +76,18 @@
     };
   };
 
+  programs = {
+    lazygit.enable = true;
+    gh.enable = true;
+    gh-dash.enable = true;
+  };
+
   home.packages = with pkgs; [
     git-interactive-rebase-tool
     git-absorb
     # git-branchless
     git-quick-stats
-    delta
     mergiraf
-    lazygit
-    git
     glab
-    gh
   ];
 }
