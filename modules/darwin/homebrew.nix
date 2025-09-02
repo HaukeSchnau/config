@@ -1,0 +1,48 @@
+{...}: {
+  homebrew = {
+    enable = true;
+
+    onActivation = {
+      autoUpdate = false;
+      upgrade = true;
+      cleanup = "zap";
+    };
+
+    caskArgs.no_quarantine = true;
+    global.brewfile = true;
+
+    casks = [
+      # "arc"
+      # "1password"
+      # "cursor"
+      # "slack"
+      # "visual-studio-code"
+      # "raycast"
+      # "rectangle"
+      # "stats"
+      # "bartender"
+      # "microsoft-outlook"
+      # "obs"
+      # "docker"
+      # "karabiner-elements"
+      # "scroll-reverser"
+      # "neovide"
+      # "ghostty"
+      # "alt-tab"
+      # "notion"
+      # "yaak"
+      # "cleanshot"
+      # "shottr"
+    ];
+
+    # CHECK NIX FIRST!
+    brews = [
+    ];
+
+    masApps = {
+    };
+
+    taps = [
+    ];
+  };
+}

@@ -23,6 +23,26 @@
     neovim.enable = true;
   };
 
+  home.shellAliases = {
+    vim = "nvim";
+    v = "nvim";
+    ls = "eza --icons";
+    cat = "bat";
+    htop = "btop";
+    pip = "uv pip";
+    ranger = "yazi";
+    y = "yazi";
+    find = "fd";
+    grep = "rg -i";
+    du = "dust";
+    tmux = "zellij";
+    # cd = "z";
+    ff = "fzf";
+    devdash = "zellij -l ~/.config/zellij/layouts/dev-dashboard.kdl";
+    lg = "lazygit";
+    ld = "lazydocker";
+  };
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
