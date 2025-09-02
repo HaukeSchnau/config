@@ -11,12 +11,19 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Controls system level software and settings including fonts on MacOS
+    darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    darwin,
     ...
   } @ inputs: {
     nixosConfigurations."tower" = nixpkgs.lib.nixosSystem {
@@ -24,6 +31,14 @@
       modules = [
         ./hosts/tower/configuration.nix
         home-manager.nixosModules.default
+      ];
+    };
+
+    darwinConfigurations."MacBook-Pro-von-Hauke" = darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
+      specialArgs = {inherit inputs self;};
+      modules = [
+        ./hosts/mbp/configuration.nix
       ];
     };
   };

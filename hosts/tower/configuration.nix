@@ -74,11 +74,12 @@
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
-    # users = {
-    #   "schnau" = import ../../modules/home-manager.nix;
-    # };
     users.schnau = {
       imports = [../../modules/home-manager.nix];
+
+      home.username = "schnau";
+      home.homeDirectory = "/home/schnau";
+
       nixpkgs.config.allowUnfree = true;
     };
   };

@@ -6,13 +6,8 @@
   imports = [
     ./git.nix
     ./shell.nix
-    ./hyprland/default.nix
+    # ./hyprland/default.nix
   ];
-
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  home.username = "schnau";
-  home.homeDirectory = "/home/schnau";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -33,7 +28,7 @@
   home.packages = with pkgs; [
     # CLI tools
     btop
-    bitwarden-cli
+    # bitwarden-cli
     hyperfine
     typst
 
