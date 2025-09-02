@@ -10,7 +10,6 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../modules/hyprland.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -58,6 +57,7 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  programs.hyprland.enable = true;
   programs.fish.enable = true;
 
   virtualisation.docker.enable = true;
@@ -79,6 +79,7 @@
     # };
     users.schnau = {
       imports = [../../modules/home-manager.nix];
+      nixpkgs.config.allowUnfree = true;
     };
   };
 
@@ -87,13 +88,11 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnfreePredicate = _: true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    code-cursor
-  ];
+  # environment.systemPackages = with pkgs; [
+  # ];
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
