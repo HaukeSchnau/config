@@ -1,16 +1,13 @@
-rebuild:
-    #!/bin/bash
+switch host:
+    #!/usr/bin/env bash
     set -e
-    pushd ~/dotfiles/nixos/
-    nvim oatman-pc.nix
     alejandra . &>/dev/null
-    git diff -U0 *.nix
+    git diff -U0
     echo "NixOS Rebuilding..."
-    sudo nixos-rebuild switch --flake . &>nixos-switch.log || (
+    sudo nixos-rebuild switch --flake .#{{host}} &>nixos-switch.log || (
     cat nixos-switch.log | grep --color error && false)
-    gen=$(nixos-rebuild list-generations | grep current)
+    gen=$(nixos-rebuild list-generations | grep 'True$' | awk '{print $1}')
     git commit -am "$gen"
-    popd
 
 format:
     alejandra --quiet .

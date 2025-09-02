@@ -10,6 +10,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../../modules/hyprland.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -20,7 +21,7 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "tower"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.interfaces.enp9s0.wakeOnLan.enable = true;
 
@@ -57,7 +58,6 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  programs.hyprland.enable = true;
   programs.fish.enable = true;
 
   virtualisation.docker.enable = true;
@@ -71,6 +71,8 @@
     ];
     shell = pkgs.fish;
   };
+
+  security.sudo.wheelNeedsPassword = false;
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
@@ -90,15 +92,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     code-cursor
-
-    # Desktop environment
-    wofi
-    waybar
-    dunst
-    libnotify
-    swww
-    kitty
-    rofi-wayland
   ];
 
   xdg.portal.enable = true;
