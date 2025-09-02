@@ -26,6 +26,9 @@
     fzf = {
       enable = true;
       enableFishIntegration = true;
+      changeDirWidgetOptions = [
+        "--preview='eza --tree --icons {} | head -200'"
+      ];
     };
 
     yazi = {

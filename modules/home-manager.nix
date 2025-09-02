@@ -36,6 +36,10 @@
     devdash = "zellij -l ~/.config/zellij/layouts/dev-dashboard.kdl";
     lg = "lazygit";
     ld = "lazydocker";
+    npx = "bunx";
+    pnpx = "bunx";
+    python = "python3";
+    c = "open $1 -a \"Cursor\"";
   };
 
   home.sessionVariables = {
