@@ -14,6 +14,10 @@
       code-cursor
       jetbrains-toolbox
       nodejs_24
+      fastlane
+      cocoapods
+      flutter
+      # darwin.xcode
     ];
 
     shellAliases = {

@@ -44,10 +44,6 @@
       # Development tools
       alejandra
       dive
-      fastlane
-      cocoapods
-      flutter
-      # darwin.xcode
 
       # Applications
       raycast
