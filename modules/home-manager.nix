@@ -5,7 +5,7 @@
 }: {
   imports = [
     ./git.nix
-    ./shell.nix
+    ./shell/default.nix
     # ./hyprland/default.nix
   ];
 
@@ -60,7 +60,7 @@
     go.enable = true;
     jujutsu.enable = true;
     uv.enable = true;
-    
+
     ghostty = {
       enable = true;
       package = pkgs.ghostty-bin;
@@ -71,7 +71,7 @@
         window-padding-x = 12;
         selection-invert-fg-bg = "true";
         macos-option-as-alt = "left";
-        mouse-hide-while-typing = "true"; 
+        mouse-hide-while-typing = "true";
         background-blur = 10;
         quick-terminal-position = "center";
         keybind = [

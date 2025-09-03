@@ -20,7 +20,7 @@
   nix.settings.experimental-features = "nix-command flakes";
 
   environment = {
-    shells = with pkgs; [ fish ];
+    shells = with pkgs; [fish];
 
     systemPath = [
       "/opt/homebrew/bin"
@@ -38,6 +38,7 @@
     users.haukeschnau = {
       imports = [../../modules/home-manager.nix];
     };
+    backupFileExtension = "backup";
     useGlobalPkgs = true;
     useUserPackages = true;
   };
