@@ -12,5 +12,13 @@
         "key": "cmd+i",
         "command": "-composer.startComposerPrompt",
         "when": "cursor.appLayout != 'agent'"
+    },
+    {
+        "key": "cmd+n",
+        "command": "-workbench.action.files.newUntitledFile"
+    },
+    {
+        "key": "cmd+n",
+        "command": "explorer.newFile"
     }
 ]
