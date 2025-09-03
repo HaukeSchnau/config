@@ -1,5 +1,38 @@
 {pkgs, ...}: {
+  home = {
+    sessionVariables = {
+      EDITOR = "nvim";
+    };
+
+    shellAliases = {
+      cat = "bat";
+      ls = "eza --icons";
+      ranger = "yazi";
+      y = "yazi";
+      find = "fd";
+      grep = "rg -i";
+      tmux = "zellij";
+      cd = "z";
+      ff = "fzf";
+      du = "dust";
+      htop = "btop";
+      vim = "nvim";
+      v = "nvim";
+    };
+
+    packages = with pkgs; [
+      fselect
+      dua
+      dust
+      just
+      poppler
+      resvg
+      p7zip
+    ];
+  };
+
   programs = {
+
     fish = {
       enable = true;
       functions = {
@@ -150,15 +183,28 @@
     ripgrep-all.enable = true;
     fd.enable = true;
     bat.enable = true;
-  };
+    btop.enable = true;
 
-  home.packages = with pkgs; [
-    fselect
-    dua
-    dust
-    just
-    poppler
-    resvg
-    p7zip
-  ];
+    neovim.enable = true;
+
+    ghostty = {
+      enable = true;
+      package = pkgs.ghostty-bin;
+      settings = {
+        macos-titlebar-style = "tabs";
+        background-opacity = 0.95;
+        theme = "catppuccin-macchiato";
+        window-padding-x = 12;
+        selection-invert-fg-bg = "true";
+        macos-option-as-alt = "left";
+        mouse-hide-while-typing = "true";
+        background-blur = 10;
+        quick-terminal-position = "center";
+        keybind = [
+          "global:ctrl+shift+grave_accent=toggle_quick_terminal"
+          "shift+enter=text:\x1b\r"
+        ];
+      };
+    };
+  };
 }

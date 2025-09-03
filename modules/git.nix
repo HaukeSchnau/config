@@ -82,6 +82,10 @@
     gh-dash.enable = true;
   };
 
+  home.shellAliases = {
+    lg = "lazygit";
+  };
+
   home.packages = with pkgs; [
     git-interactive-rebase-tool
     git-absorb
