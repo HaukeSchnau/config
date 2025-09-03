@@ -6,6 +6,7 @@
 }: {
   imports = [
     ../../modules/darwin/homebrew.nix
+    ../../modules/backup-darwin.nix
     inputs.home-manager.darwinModules.home-manager
   ];
 
@@ -41,6 +42,17 @@
     backupFileExtension = "backup";
     useGlobalPkgs = true;
     useUserPackages = true;
+  };
+
+  fonts = {
+    packages = with pkgs; [
+      nerd-fonts.meslo-lg
+      nerd-fonts.intone-mono
+      nerd-fonts.fira-code
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.monaspace
+      newcomputermodern
+    ];
   };
 
   # use touch id for sudo

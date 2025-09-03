@@ -32,7 +32,6 @@
   };
 
   programs = {
-
     fish = {
       enable = true;
       functions = {
